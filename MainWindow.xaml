@@ -1,0 +1,144 @@
+﻿<Window x:Class="PrimCraskalAlgorithm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:wpfgraphcontrol="http://mlsagl"
+        
+        xmlns:local="clr-namespace:PrimCraskalAlgorithm"
+        mc:Ignorable="d"
+        Title="Нахождение минимального остовного дерева. Алгоритмы Прима и Краскала" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition   Width="0.1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition   Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="0.12*"/>
+            <RowDefinition  Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Column="0"
+              Grid.ColumnSpan="6"
+              Grid.Row="0"
+              VerticalAlignment="Center"
+              Background="LightGray">
+            <MenuItem Header=" Информация о программе ">
+                <MenuItem Header=" Посмотреть информацию "
+                          Click="ProgramInfo_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="  Граф  ">
+                <MenuItem Header=" Добавить новый граф ">
+                    <MenuItem Header=" Добавить граф из файла с матрицей "
+                              Click="addGraphFromFile_Click"/>
+                    <MenuItem Header=" Сгенерировать новый граф "
+                              Click="generateNewGraph_Click"/>
+                </MenuItem>
+                <MenuItem Header="Посмотреть информацию о графе"/>
+            </MenuItem>
+            <MenuItem Header=" Настройки ">
+                <MenuItem Header=" Цвет рёбер "
+                          Click="ChangeEdgeColor_Click"/>
+                <MenuItem Header=" Цвет заднего фона "
+                          Click="ChangeBackgroundColor_Click"/>
+            </MenuItem>
+        </Menu>
+        <wpfgraphcontrol:AutomaticGraphLayoutControl x:Name="graphPrim"
+                                                     Grid.Row="2"
+                                                     Grid.RowSpan="2"
+                                                     Grid.Column="1"
+                                                     Grid.ColumnSpan="2"
+                                                     />
+        <wpfgraphcontrol:AutomaticGraphLayoutControl x:Name="graphCraskal"
+                                                     Grid.Row="2"
+                                                     Grid.RowSpan="2"
+                                                     Grid.Column="3"
+                                                     Grid.ColumnSpan="2"
+                                                     />
+
+        <Button Content="Алгоритм Прима"
+                FontSize="20"
+                FontFamily="Times New Roman"
+                Grid.Column="1"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Background="White"
+                />
+        <Button Content="Алгоритм Краскала"
+                FontSize="20"
+                FontFamily="Times New Roman"
+                Grid.Column="3"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Background="White"
+                />
+        <Button x:Name="primAlgButton"
+                Content="Запуск алгоритма"
+                Grid.Column="2"
+                Grid.Row="4"
+                Margin="10 10 10 10" Click="primAlgButton_Click"
+                />
+        <Button x:Name="kraskAlgButton"
+                Content="Запуск алгоритма"
+                Grid.Column="4"
+                Grid.Row="4"
+                Margin="10 10 10 10" Click="kraskAlgButton_Click"
+                />
+        <Button x:Name="returnToOrighKrask"
+                Content="Исходный граф"
+                Padding = "4 4 4 4"
+                Grid.Column="4"
+                Grid.Row="3"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="10 20 20 5" Click="returnToOrighKrask_Click"
+                />
+        <Button x:Name="returnToOrighPrim"
+                Content="Исходный граф"
+                
+                
+                Grid.Column="2"
+                Grid.Row="3"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="10 20 20 5" Click="returnToOrighPrim_Click"
+                Padding="4 4 4 4"
+                />
+        <Label  Content="Время выполнения алгоритма:"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Grid.Column="1"
+                Grid.Row="4"        
+                />
+        <Label  x:Name="timePrimAlgoritm"
+                Content="______ : ______ : ______"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Grid.Column="1"
+                Grid.Row="4"        
+                />
+
+        <Label  Content="Время выполнения алгоритма:"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Grid.Column="3"
+                Grid.Row="4"        
+                />
+        <Label  x:Name="timeKraskalAlgoritm"
+                Content="______ : ______ : ______"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Grid.Column="3"
+                Grid.Row="4"        
+                />
+    </Grid>
+</Window>

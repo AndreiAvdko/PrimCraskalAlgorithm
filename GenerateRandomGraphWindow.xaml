@@ -1,0 +1,122 @@
+﻿<Window x:Class="PrimCraskalAlgorithm.GenerateRandomGraphWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrimCraskalAlgorithm"
+        mc:Ignorable="d"
+        Title="Выберете параметры графа" Height="300" Width="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Заполните значения параметров для генерации нового графа"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="5"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               />
+        <Label Content="Минимальное количество вершин графа: "
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               />
+        <Label Content="Максимальное количество вершин графа: "
+               Grid.Row="2"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               />
+        <Label Content="Минимальное количество рёбер: "
+               Grid.Row="3"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               />
+        <Label Content="Максимальное количество рёбер: "
+               Grid.Row="4"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               />
+        <Label Content="Верхний предел значения веса для рёбер графа: "
+               Grid.Row="5"
+               Grid.Column="0"
+               Grid.ColumnSpan="4"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"
+               />
+        <TextBox x:Name="minVertexCount"
+                 Width="70"
+                 Height="20"
+                 Grid.Column="4"
+                 Grid.Row="1"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 />
+        <TextBox x:Name="maxVertexCount"
+                 Width="70"
+                 Height="20"
+                 Grid.Column="4"
+                 Grid.Row="2"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 />
+        <TextBox x:Name="minEdgeCount"
+                 Width="70"
+                 Height="20"
+                 Grid.Column="4"
+                 Grid.Row="3"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 />
+        <TextBox x:Name="maxEdgeCount"
+                 Width="70"
+                 Height="20"
+                 Grid.Column="4"
+                 Grid.Row="4"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 />
+        <TextBox x:Name="maxLimitOfEdgeWeight"
+                 Width="70"
+                 Height="20"
+                 Grid.Column="4"
+                 Grid.Row="5"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 />
+        <Button x:Name="generateGraphButton"
+                Content=" Сгенерировать граф "
+                HorizontalAlignment="Center"
+                Width="130"
+                Height="25"
+                Grid.Row="6"
+                Grid.Column="1"
+                Grid.ColumnSpan="4" 
+                Click="generateGraphButton_Click"
+                />
+
+    </Grid>
+</Window>
